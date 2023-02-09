@@ -12,7 +12,6 @@ function App() {
         <Routes>
           <Route path='/' element={<Layout />}/>
           <Route path='inputdetails'  index element={<InputDetails />} />
-       
         </Routes>
       </BrowserRouter>
     </>

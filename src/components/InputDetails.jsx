@@ -8,6 +8,7 @@ import { useState } from 'react';
 import { Category } from '@mui/icons-material';
 import FormControl from '@mui/material/FormControl';
 import InputLabel from '@mui/material/InputLabel';
+import Footer from './Footer';
 
 const InputDetails = () => {
 
@@ -43,13 +44,13 @@ const InputDetails = () => {
       <Header />
       <div className='w-40 justify-content-center col-12 d-flex'>
         <table className='text-center m-auto '>
-          <tr><td colSpan={2}><p className='fs-2 text-primary'>Enter Prodstrct Details</p></td></tr>
+          <tr><td colSpan={2}><p className='fs-2 text-primary'>Enter Product Details</p></td></tr>
           <tr>
             <td className='fs-5 text-primary px-3'>Name</td>
             <td> <TextField autoFocus='true' sx={form} label='Name' /></td></tr>
           <tr>
             <td className='fs-5 text-primary px-3'>Category</td>
-            <td fullHight> <FormControl  sx={form}>
+            <td fullHight > <FormControl  sx={form}>
               <InputLabel>Category</InputLabel>
               <Select value={category} onChange={categorySelector} label="category">
                 {categories.map((name) => (
@@ -67,6 +68,7 @@ const InputDetails = () => {
       
 
       </div>
+      <Footer/>
 
     </>
   )
