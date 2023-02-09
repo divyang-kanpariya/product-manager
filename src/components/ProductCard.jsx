@@ -11,7 +11,7 @@ function ProductCard(props) {
     }
 
   return (
-    <Card  sx={{maxWidth:340,marginLeft:10, backgroundColor :'grey',boxShadow:"0px 0px 3px"}}>
+    <Card  sx={{width:340,marginLeft:10, backgroundColor :'grey',boxShadow:"0px 0px 3px", float:'left' ,marginBottom:5}}>
       
       <CardMedia
         component="img"

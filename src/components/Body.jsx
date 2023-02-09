@@ -6,7 +6,7 @@ const Body = () => {
 
   return (
     <>
-    <div className='d-flex'> 
+    <div>
    { products.map((data) => {
     return  <ProductCard name={data.title} category={data.category} discription={data.discritption}/>
     })}</div>

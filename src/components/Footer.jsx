@@ -7,7 +7,7 @@ import CopyrightIcon from '@mui/icons-material/Copyright';
 const Footer = () => {
 
   const footersx = {
-    position : "absolute",
+    position : "fixed",
     bottom:"0",
     backgroundColor :"black",
     width : "100%",
