@@ -29,7 +29,7 @@ function ProductCard(props) {
       <CardMedia
         component="img"
         height="194"
-        image="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/640px-Image_created_with_a_mobile_phone.png"
+        image="https://img.freepik.com/free-photo/blue-oil-paint-strokes-textured-background_53876-98328.jpg"
         alt="Paella dish"
       />
       <CardContent>

@@ -40,7 +40,7 @@ const ShowProduct = () => {
       <p style={{ textAlign: 'center' }} className='fs-2 p-4 text-primary'>About Product</p>
       <div className='d-flex justify-content-center p-5 '>
 
-        <div><img style={{ paddingRight: '100px', width:'350px' }} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQCc-uABwpeaK7m166KYGjN6qb1aMSYf9TxQ&usqp=CAU" alt="" />
+        <div><img style={{ paddingRight: '100px', width:'350px' }} src="https://modernpaintbynumbers.com/wp-content/uploads/2021/09/Still-Life-with-Candlestick-by-leger-paint-by-number.jpg" alt="" />
         </div>
         <div><table className='m-auto '>
 
