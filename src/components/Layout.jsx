@@ -8,12 +8,12 @@ import { useState } from 'react';
 
 
 const Layout = () => {
-  
+
   return (<>
-  <Header/>
-  <Body/>
-  <AddButton/>
-  <Footer/>
+    <Header />
+    <Body />
+    <AddButton />
+    <Footer />
 
   </>
   )

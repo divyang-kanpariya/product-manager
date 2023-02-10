@@ -1,19 +1,29 @@
-import React from 'react'
-import{ CardMedia} from '@mui/material';
+import React, { useState } from 'react'
+import { CardMedia } from '@mui/material';
 import Card from '@mui/material/Card';
 import { CardContent, Typography } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 
 function ProductCard(props) {
-    const data = {
-      name : props.name,
-      description : props.description,
-      category : props.category,
-    }
-    
+  const navigate = useNavigate();
+  const data = {
+    id : props.id,
+    name: props.name,
+    description: props.description,
+    category: props.category,
+  }
+  const [state, setstate] = useState();
+  
+
+  function gotoProduct(){
+    setstate(data)
+      navigate("/showproduct",{state});
+  }
+
 
   return (
-    <Card  sx={{width:340,marginLeft:10, backgroundColor :'grey',boxShadow:"0px 0px 3px", float:'left' ,marginBottom:5}}>
-      
+    <Card onClick={gotoProduct} sx={{ width: 340, marginLeft: 10, backgroundColor: 'grey', boxShadow: "0px 0px 3px", float: 'left', marginBottom: 5 }}>
+
       <CardMedia
         component="img"
         height="194"
@@ -21,7 +31,7 @@ function ProductCard(props) {
         alt="Paella dish"
       />
       <CardContent>
-      <Typography variant='h5'>{data.name}</Typography>
+        <Typography variant='h5'>{data.name}</Typography>
         <Typography>{data.description}</Typography>
       </CardContent>
     </Card>

@@ -15,18 +15,14 @@ import { useNavigate } from 'react-router-dom';
 
 const InputDetails = () => {
 
-const {products, setProducts}= useContext(UserContext);
+  const { products, setProducts } = useContext(UserContext);
 
 
-console.log(products)
 
   const [category, setCategory] = useState("");
-  const [product, setProduct] = useState({name: "",file:"", category: "", description: "" });
-const navigate = useNavigate();
+  const [product, setProduct] = useState({ name: "", category: "", file: "", description: "" });
+  const navigate = useNavigate();
 
-
-
- 
 
   const form = {
     display: 'flex',
@@ -43,9 +39,9 @@ const navigate = useNavigate();
 
   function addProduct(event) {
     event.preventDefault()
-    setProducts([...products,product])
-    
-     navigate("/")
+    setProducts([...products, product])
+
+   navigate("/")
 
   }
 
@@ -77,12 +73,12 @@ const navigate = useNavigate();
       <div className='w-40 justify-content-center col-12 d-flex'>
         <form>
           <table className='text-center m-auto '>
-            <tr><td colSpan={2}><p className='fs-2 text-primary'>Enter Product Details</p></td></tr>
-            <tr>
+            <tr><td colSpan={2}><p className='fs-2 pb-4 text-primary'>Enter Product Details</p></td></tr>
+            <tr className='text-start'>
               <td className='fs-5 text-primary px-3'>Name</td>
               <td> <TextField onChange={eventHandeler} autoFocus='true' sx={form} label='Name' name='name' /></td>
             </tr>
-            <tr>
+            <tr className='text-start'>
               <td className='fs-5 text-primary px-3'>Category</td>
               <td> <FormControl sx={form}>
                 <InputLabel>Category</InputLabel>
@@ -94,14 +90,14 @@ const navigate = useNavigate();
                 </Select>
               </FormControl></td>
             </tr>
-            <tr>
-              <td><td className='fs-5 text-primary px-3'>Images</td></td>
-              <td><input type="file" onChange={eventHandeler} name='file' /></td>
+            <tr className='text-start'>
+              <td className='fs-5 text-primary px-3'>Images</td>
+              <td><input style={{padding:'25px 0px 0px 0px'}} type="file" onChange={eventHandeler} name='file' /></td>
             </tr>
-            <tr>
+            <tr className='text-start'>
               <td className='fs-5 text-primary px-3 '>description</td>
               <td><TextField name='description' onChange={eventHandeler} multiline={true} minRows={3} sx={form} label='' placeholder='Enter More Information about your product....' /></td></tr>
-            <tr><td colSpan={2}><button class="btn btn-primary mt-5 fs-5 " type="submit" onClick={addProduct}>Add Product</button></td></tr>
+            <tr><td colSpan={2}><button style={{marginTop:'65px'}} class="btn btn-primary fs-5 " type="submit" onClick={addProduct}>Add Product</button></td></tr>
           </table>
         </form>
       </div>
