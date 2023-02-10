@@ -1,4 +1,4 @@
-import React, { useReducer } from 'react'
+import React, { useContext, useReducer } from 'react'
 import TextField from '@mui/material/TextField';
 import Header from './Header';
 import { margin } from '@mui/system';
@@ -9,19 +9,24 @@ import { Category } from '@mui/icons-material';
 import FormControl from '@mui/material/FormControl';
 import InputLabel from '@mui/material/InputLabel';
 import Footer from './Footer';
+import { UserContext } from '../App';
 import { type } from '@testing-library/user-event/dist/type';
+import { useNavigate } from 'react-router-dom';
 
 const InputDetails = () => {
 
+const {products, setProducts}= useContext(UserContext);
+
+
+console.log(products)
+
   const [category, setCategory] = useState("");
-  const [image, setImage] = useState({ id: "", name: "", category: "", discription: "" });
-
-  const [state, dispatch] = useReducer(reducer, { id: "", name: "", category: "", discription: "" });
-
-  const products = [];
+  const [product, setProduct] = useState({name: "",file:"", category: "", description: "" });
+const navigate = useNavigate();
 
 
 
+ 
 
   const form = {
     display: 'flex',
@@ -37,7 +42,22 @@ const InputDetails = () => {
   }
 
   function addProduct(event) {
-    console.log(event);
+    event.preventDefault()
+    setProducts([...products,product])
+    
+     navigate("/")
+
+  }
+
+
+  function eventHandeler(event) {
+    const { name, value } = event.target;
+    setProduct((product) => {
+      return {
+        ...product,
+        [name]: value
+      };
+    })
   }
 
   const categories = [
@@ -60,13 +80,13 @@ const InputDetails = () => {
             <tr><td colSpan={2}><p className='fs-2 text-primary'>Enter Product Details</p></td></tr>
             <tr>
               <td className='fs-5 text-primary px-3'>Name</td>
-              <td> <TextField onChange={} autoFocus='true' sx={form} label='Name' /></td>
+              <td> <TextField onChange={eventHandeler} autoFocus='true' sx={form} label='Name' name='name' /></td>
             </tr>
             <tr>
               <td className='fs-5 text-primary px-3'>Category</td>
-              <td fullHight > <FormControl sx={form}>
+              <td> <FormControl sx={form}>
                 <InputLabel>Category</InputLabel>
-                <Select value={category} onChange={} label="category">
+                <Select value={product.category} onChange={eventHandeler} label="category" name='category'>
                   {categories.map((name) => (
                     <MenuItem key={name} value={name}
                     >{name}
@@ -76,18 +96,14 @@ const InputDetails = () => {
             </tr>
             <tr>
               <td><td className='fs-5 text-primary px-3'>Images</td></td>
-              <td><input type="file" onChange={uploadImages} /></td>
+              <td><input type="file" onChange={eventHandeler} name='file' /></td>
             </tr>
-
             <tr>
-              <td className='fs-5 text-primary px-3 '>Discription</td>
-              <td><TextField onChange={} multiline={true} minRows={3} sx={form} label='' placeholder='Enter More Information about your product....' /></td></tr>
+              <td className='fs-5 text-primary px-3 '>description</td>
+              <td><TextField name='description' onChange={eventHandeler} multiline={true} minRows={3} sx={form} label='' placeholder='Enter More Information about your product....' /></td></tr>
             <tr><td colSpan={2}><button class="btn btn-primary mt-5 fs-5 " type="submit" onClick={addProduct}>Add Product</button></td></tr>
           </table>
         </form>
-
-
-
       </div>
       <Footer />
 

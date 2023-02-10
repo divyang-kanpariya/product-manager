@@ -1,21 +1,37 @@
-import React from "react";
+import React, {useState, createContext} from "react";
 import { ReactDOM } from "react";
 import Layout from "./components/Layout";
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import InputDetails from "./components/InputDetails";
-
+const UserContext = createContext([]);
 
 function App() {
+
+  const [products, setProducts] = useState([ {
+    name : 'car1',
+    category : 'car1',
+    file :'',
+    description : 'this is a super car1'
+  },{
+    name : 'car2',
+    category : 'car2',
+    file : '',
+    description : 'this is a super car2'
+  }]); 
+
   return (
     <>
+    <UserContext.Provider value={{products, setProducts}}>
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<Layout />}/>
           <Route path='inputdetails'  index element={<InputDetails />} />
         </Routes>
       </BrowserRouter>
+      </UserContext.Provider>
     </>
   );
 }
 
 export default App;
+export {UserContext}

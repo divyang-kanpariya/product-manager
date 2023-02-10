@@ -1,15 +1,23 @@
-import React from 'react'
-import {products} from '../Products'
+import React, {useContext, useEffect} from 'react'
+import { UserContext } from '../App';
 import ProductCard from './ProductCard'
+import {Products} from '../Products'
 
 const Body = () => {
-
-  return (
+ const {products} = useContext(UserContext);
+ const mapProduct = products.products;
+  
+ useEffect(() => {
+  console.log("mapProduct",products)
+ },[products])
+ return (
+    
     <>
     <div>
-   { products.map((data) => {
-    return  <ProductCard name={data.title} category={data.category} discription={data.discritption}/>
-    })}</div>
+    {products.map((data) => {
+    return  <ProductCard name={data.name} category={data.category} description={data.description}/>
+    })}
+    </div>
     </>
   )
 }

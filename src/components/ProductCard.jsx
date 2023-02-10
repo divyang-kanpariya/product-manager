@@ -6,9 +6,10 @@ import { CardContent, Typography } from '@mui/material';
 function ProductCard(props) {
     const data = {
       name : props.name,
-      discription : props.discription,
+      description : props.description,
       category : props.category,
     }
+    
 
   return (
     <Card  sx={{width:340,marginLeft:10, backgroundColor :'grey',boxShadow:"0px 0px 3px", float:'left' ,marginBottom:5}}>
@@ -21,7 +22,7 @@ function ProductCard(props) {
       />
       <CardContent>
       <Typography variant='h5'>{data.name}</Typography>
-        <Typography>{data.discription}</Typography>
+        <Typography>{data.description}</Typography>
       </CardContent>
     </Card>
   )
