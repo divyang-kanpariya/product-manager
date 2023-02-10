@@ -14,7 +14,7 @@ const Body = () => {
     <>
       <div>
         {products.map((data, index) => {
-          return <ProductCard id={index} name={data.name} category={data.category} description={data.description} />
+          return <ProductCard id={index} name={data.name} category={data.category} description={data.description} price={data.price} color={data.color} />
         })}
       </div>
     </>

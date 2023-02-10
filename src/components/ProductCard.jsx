@@ -11,18 +11,20 @@ function ProductCard(props) {
     name: props.name,
     description: props.description,
     category: props.category,
+    price : props.price,
+    color : props.color,
   }
   const [state, setstate] = useState();
   
 
   function gotoProduct(){
     setstate(data)
-      navigate("/showproduct",{state});
+      navigate("/showproduct",);
   }
 
 
   return (
-    <Card onClick={gotoProduct} sx={{ width: 340, marginLeft: 10, backgroundColor: 'grey', boxShadow: "0px 0px 3px", float: 'left', marginBottom: 5 }}>
+    <Card onClick={gotoProduct} sx={{ width: 320, marginLeft: 10,minHeight:'360px', backgroundColor: '#ebd3d1', boxShadow: "0px 0px 3px", float: 'left', marginBottom: 5 }}>
 
       <CardMedia
         component="img"
@@ -33,6 +35,9 @@ function ProductCard(props) {
       <CardContent>
         <Typography variant='h5'>{data.name}</Typography>
         <Typography>{data.description}</Typography>
+        
+        <Typography>{data.color}</Typography>
+        <Typography className='fs-2 text-danger'>{data.price}</Typography>
       </CardContent>
     </Card>
   )

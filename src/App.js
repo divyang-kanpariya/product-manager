@@ -12,12 +12,16 @@ function App() {
     name : 'car1',
     category : 'car1',
     file :'',
-    description : 'this is a super car1'
+    description : 'this is a super car1',
+    price:"20",
+    color:"black"
   },{
     name : 'car2',
     category : 'car2',
     file : '',
-    description : 'this is a super car2'
+    description : 'this is a super car2',
+    price:"20",
+    color:"black"
   }]); 
 
   return (

@@ -20,7 +20,8 @@ const InputDetails = () => {
 
 
   const [category, setCategory] = useState("");
-  const [product, setProduct] = useState({ name: "", category: "", file: "", description: "" });
+  const [product, setProduct] = useState({ name: "", category: "", file: "", description: "",price:"",color:"" });
+
   const navigate = useNavigate();
 
 
@@ -41,7 +42,7 @@ const InputDetails = () => {
     event.preventDefault()
     setProducts([...products, product])
 
-   navigate("/")
+    navigate("/")
 
   }
 
@@ -73,7 +74,7 @@ const InputDetails = () => {
       <div className='w-40 justify-content-center col-12 d-flex'>
         <form>
           <table className='text-center m-auto '>
-            <tr><td colSpan={2}><p className='fs-2 pb-4 text-primary'>Enter Product Details</p></td></tr>
+            <tr><td colSpan={2}><p className='fs-2  text-primary'>Enter Product Details</p></td></tr>
             <tr className='text-start'>
               <td className='fs-5 text-primary px-3'>Name</td>
               <td> <TextField onChange={eventHandeler} autoFocus='true' sx={form} label='Name' name='name' /></td>
@@ -92,12 +93,23 @@ const InputDetails = () => {
             </tr>
             <tr className='text-start'>
               <td className='fs-5 text-primary px-3'>Images</td>
-              <td><input style={{padding:'25px 0px 0px 0px'}} type="file" onChange={eventHandeler} name='file' /></td>
+              <td><input style={{ padding: '20px 0px 0px 0px' }} type="file" onChange={eventHandeler} name='file' /></td>
             </tr>
             <tr className='text-start'>
               <td className='fs-5 text-primary px-3 '>description</td>
-              <td><TextField name='description' onChange={eventHandeler} multiline={true} minRows={3} sx={form} label='' placeholder='Enter More Information about your product....' /></td></tr>
-            <tr><td colSpan={2}><button style={{marginTop:'65px'}} class="btn btn-primary fs-5 " type="submit" onClick={addProduct}>Add Product</button></td></tr>
+              <td><TextField required  name='description' onChange={eventHandeler} multiline={true} minRows={3} sx={form} label='' placeholder='Enter More Information about your product....' />
+              </td>
+            </tr>
+            <tr className='text-start'>
+              <td className='fs-5 text-primary px-3'>Price</td>
+              <td> <TextField required onChange={eventHandeler} autoFocus='true' sx={form} label='price' name='price' type='number' /></td>
+              
+            </tr>
+            <tr className='text-start'>
+              <td className='fs-5 text-primary px-3'>Color</td>
+              <td> <TextField required  onChange={eventHandeler} autoFocus='true' sx={form} label='color' name='color' /></td>
+            </tr>
+            <tr><td colSpan={2}><button style={{ marginTop: '30px' }} class="btn btn-primary fs-5 " type="submit" onClick={addProduct}>Add Product</button></td></tr>
           </table>
         </form>
       </div>
