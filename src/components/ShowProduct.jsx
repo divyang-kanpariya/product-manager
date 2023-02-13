@@ -67,7 +67,7 @@ const ShowProduct = () => {
               <td style={{ width: '100px' }}><b>color  </b></td><td style={{ width: '100px' }}><p >{currentProduct.color}</p></td>
             </tr>
           </div>
-          <p style={{ padding: '40px 0 0 0', fontSize: '20px' }}>{currentProduct.description}</p>
+          <p style={{ padding: '40px 0 40px 0', fontSize: '20px' }}>{currentProduct.description}</p>
 
         </div>
       </div>

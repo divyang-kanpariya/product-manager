@@ -93,7 +93,7 @@ const InputDetails = () => {
 
   const categories = [
     'Mobiles',
-    'Kitchn',
+    'kitchen',
     'Elecronics',
     'Home',
     'Computers',
@@ -128,7 +128,8 @@ const InputDetails = () => {
           <tr className='text-start'>
             <td className='fs-5 px-3'>Images</td>
             <td><input style={{ padding: '20px 0px 0px 0px' }} type="file" onChange={addImage} name='file' /></td></tr><tr><td> </td>
-            <td>{image && (<div><img style={{ width: '500px' }} src={URL.createObjectURL(image)}></img><td><button style={{ width: '500px', backgroundColor: 'red' ,padding:'0px', color:'white', border:'5px solid red' }} onClick={removeImage} >
+            <td>
+              {image && (<div><img style={{ width: '500px' }} src={URL.createObjectURL(image)}></img><td><button style={{ width: '500px', backgroundColor: 'red' ,padding:'0px', color:'white', border:'5px solid red' }} onClick={removeImage} >
               Remove This Image
             </button></td></div>)}
 

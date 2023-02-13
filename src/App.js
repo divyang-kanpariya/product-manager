@@ -12,7 +12,7 @@ function App() {
     id:45,
     name:"This is first product",
     category:"computer",
-    description:"description for product 1 description for product 1description for product 1description for product 1description for product 1description for product 1description for product 1description for product 1",
+    description:"description for product 1 description for product 1description for product 1description for product 1description for product 1description for product 1description for product 1description for product 1description for product 1 description for product 1description for product 1description for product 1description for product 1 description for product 1description for product 1description for product 1",
     color:'pink',
     price:'20',
   }]);
