@@ -20,7 +20,7 @@ const InputDetails = () => {
 
 
   const [category, setCategory] = useState("");
-  const [product, setProduct] = useState({ name: "", category: "", file: "", description: "",price:"",color:"" });
+  const [product, setProduct] = useState({ id: "",name: "", category: "", file: "", description: "", price: "", color: "" });
 
   const navigate = useNavigate();
 
@@ -28,7 +28,7 @@ const InputDetails = () => {
   const form = {
     display: 'flex',
     justifyContent: 'center',
-    marginTop: '30px',
+    marginTop: '20px',
     width: '500px',
 
   }
@@ -76,6 +76,10 @@ const InputDetails = () => {
           <table className='text-center m-auto '>
             <tr><td colSpan={2}><p className='fs-2  text-primary'>Enter Product Details</p></td></tr>
             <tr className='text-start'>
+              <td className='fs-5 text-primary px-3'>Id</td>
+              <td> <TextField onChange={eventHandeler} autoFocus='true' sx={form} label='Id' name='id' /></td>
+            </tr>
+            <tr className='text-start'>
               <td className='fs-5 text-primary px-3'>Name</td>
               <td> <TextField onChange={eventHandeler} autoFocus='true' sx={form} label='Name' name='name' /></td>
             </tr>
@@ -97,19 +101,19 @@ const InputDetails = () => {
             </tr>
             <tr className='text-start'>
               <td className='fs-5 text-primary px-3 '>description</td>
-              <td><TextField required  name='description' onChange={eventHandeler} multiline={true} minRows={3} sx={form} label='' placeholder='Enter More Information about your product....' />
+              <td><TextField required name='description' onChange={eventHandeler} multiline={true} minRows={3} sx={form} label='' placeholder='Enter More Information about your product....' />
               </td>
             </tr>
             <tr className='text-start'>
               <td className='fs-5 text-primary px-3'>Price</td>
               <td> <TextField required onChange={eventHandeler} autoFocus='true' sx={form} label='price' name='price' type='number' /></td>
-              
+
             </tr>
             <tr className='text-start'>
               <td className='fs-5 text-primary px-3'>Color</td>
-              <td> <TextField required  onChange={eventHandeler} autoFocus='true' sx={form} label='color' name='color' /></td>
+              <td> <TextField required onChange={eventHandeler} autoFocus='true' sx={form} label='color' name='color' /></td>
             </tr>
-            <tr><td colSpan={2}><button style={{ marginTop: '30px' }} class="btn btn-primary fs-5 " type="submit" onClick={addProduct}>Add Product</button></td></tr>
+            <tr><td colSpan={2}><button style={{ marginTop: '30px', marginBottom:'100px' }} class="btn btn-primary fs-5 " type="submit" onClick={addProduct}>Add Product</button></td></tr>
           </table>
         </form>
       </div>

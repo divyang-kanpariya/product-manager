@@ -7,14 +7,13 @@ const Body = () => {
   const { products } = useContext(UserContext);
 
   useEffect(() => {
-    console.log("products", products)
   }, [products])
   return (
 
     <>
       <div>
-        {products.map((data, index) => {
-          return <ProductCard id={index} name={data.name} category={data.category} description={data.description} price={data.price} color={data.color} />
+        {products.map((data) => {
+          return <ProductCard id={data.id} name={data.name} category={data.category} description={data.description} price={data.price} color={data.color} />
         })}
       </div>
     </>
