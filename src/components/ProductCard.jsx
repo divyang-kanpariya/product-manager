@@ -24,7 +24,7 @@ function ProductCard(props) {
 
 
   return (
-    <Card onClick={gotoProduct} sx={{ width: 320, marginLeft: 10, minHeight: '365px', backgroundColor: '#ebd3d1', boxShadow: "0px 0px 3px", float: 'left', marginBottom: 5 }}>
+    <Card onClick={gotoProduct} sx={{ width: 290, marginLeft: 10, minHeight: '365px', backgroundColor: '#ebd3d1', boxShadow: "0px 0px 3px", float: 'left', marginBottom: 5 }}>
 
       <CardMedia
         component="img"

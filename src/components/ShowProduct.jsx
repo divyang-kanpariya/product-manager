@@ -19,18 +19,18 @@ const ShowProduct = () => {
   const backButton = {
     position: 'fixed',
     top: '120px',
-    left: '100px'
+    left: '100px',
+    backgroundColor: 'black',
   }
   function backToApp() {
     navigate('/')
   }
 
   const currentProduct = products.find(x => x.id == currentProductId);
-  console.log(currentProduct);
+
 
 
   const text = {
-    border: '1px solid red',
     borderRadius: '5px',
     padding: '10px',
     width: '400px',
@@ -38,7 +38,7 @@ const ShowProduct = () => {
   }
 
 
-  function deleteProduct(){
+  function deleteProduct() {
     setProducts((prevProducts) => {
       return prevProducts.filter((x, id) => {
         return x.id !== currentProductId;
@@ -55,24 +55,23 @@ const ShowProduct = () => {
         <ArrowBackIcon />
       </Fab>
       <div className='d-flex justify-content-center p-5 '>
-        <div><img style={{ paddingRight: '100px', width: '380px' }} src="https://modernpaintbynumbers.com/wp-content/uploads/2021/09/Still-Life-with-Candlestick-by-leger-paint-by-number.jpg" alt="" />
-          <td><p className='fs-3 text-danger mt-3' style={{ border: '1px solid red', backgroungColor: 'blue', marginLeft: '90px', borderRadius: '5px', padding: '10px 25px ', }}>$ {currentProduct.price}</p></td></div>
-        <div><table className='m-auto '>
-          <tr>
-            <td ><p style={text}>{currentProduct.name}</p></td>
+        <div><img style={{ paddingRight: '100px', width: '600px' }} src="https://modernpaintbynumbers.com/wp-content/uploads/2021/09/Still-Life-with-Candlestick-by-leger-paint-by-number.jpg" alt="" />
+        </div>
+        <div style={{ maxWidth: '700px' }}>
+          <p style={{ fontSize: '45px', fontWeight: '600', padding: '0 0 0 0' }}>{currentProduct.name}</p>
+          <p style={{ fontWeight: '500', fontSize: '35px', padding: '40px 0 0 0' }}>$ {currentProduct.price}</p>
+          <div className='fs-5' style={{ padding: '50px 0 0 0' }}><tr>
+            <td style={{ width: '100px' }}><b>Category  </b></td><td style={{ width: '100px' }}><p >{currentProduct.category}</p></td>
           </tr>
-          <tr>
-            <td><p style={text}>{currentProduct.category}</p></td>
-          </tr>
-          <tr>
-            <td><p style={text}>{currentProduct.description}</p></td>
-          </tr>
-          <tr>
-            <td><p style={text}>{currentProduct.color}</p></td>
-          </tr>
-        </table></div>
+            <tr>
+              <td style={{ width: '100px' }}><b>color  </b></td><td style={{ width: '100px' }}><p >{currentProduct.color}</p></td>
+            </tr>
+          </div>
+          <p style={{ padding: '40px 0 0 0', fontSize: '20px' }}>{currentProduct.description}</p>
+
+        </div>
       </div>
-      <DeleteButton onDelete={deleteProduct}/>
+      <DeleteButton onDelete={deleteProduct} />
       <Footer /></div>
   )
 }

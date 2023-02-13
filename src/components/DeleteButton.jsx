@@ -9,15 +9,15 @@ const DeleteButton = (props) => {
         position: 'fixed',
         bottom: "110px",
         right: "90px",
-        backgroundColor:"red"
+        backgroundColor:"black"
     }
 
    
   return (
    
     <div>
-    <Fab sx={DeleteButton} onClick={props.onDelete}  aria-label="delete" size=''>
-        <DeleteIcon />
+    <Fab sx={DeleteButton} onClick={props.onDelete}  color='primary' aria-label="delete" size=''>
+        <DeleteIcon sx={{color:'white'}} />
       </Fab>
       </div>
   )

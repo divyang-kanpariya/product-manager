@@ -8,7 +8,15 @@ const UserContext = createContext([]);
 
 function App() {
 
-  const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState([{
+    id:45,
+    name:"This is first product",
+    category:"computer",
+    description:"description for product 1 description for product 1description for product 1description for product 1description for product 1description for product 1description for product 1description for product 1",
+    color:'pink',
+    price:'20',
+  }]);
+  console.log(products);
 
   return (
     <>

@@ -5,6 +5,7 @@ import ProductCard from './ProductCard'
 
 const Body = () => {
   const { products } = useContext(UserContext);
+  
 
   useEffect(() => {
   }, [products])

@@ -9,6 +9,7 @@ const AddButton = () => {
         position: 'fixed',
         bottom: "110px",
         right: "90px",
+        backgroundColor:'black'
     }
 
     function addProduct(){
@@ -18,7 +19,7 @@ const AddButton = () => {
    
     <div>
     <Fab sx={addButton} onClick={addProduct} color="primary" aria-label="add" size=''>
-        <AddIcon />
+        <AddIcon sx={{color:'white'}} />
       </Fab>
       </div>
   )

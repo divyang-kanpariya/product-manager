@@ -16,10 +16,10 @@ const Footer = () => {
 
   return (
     <div style={footersx}>
-    <div className=" mx-4 d-flex pt-4 justify-content-between text-white">
-      <p><CopyrightIcon/>Divyang Kanpariya</p>
-    <div className='mx-4'><InstagramIcon/>
-      <FacebookIcon/></div>
+    <div className=" mx-4 d-flex pt-3 justify-content-between text-white">
+      <p style={{fontSize:'18px'}}><CopyrightIcon/> Divyang Kanpariya</p>
+    <div className='mx-3'><InstagramIcon sx={{marginRight:'20px',fontSize:'35px'}}/>
+      <FacebookIcon sx={{fontSize:'35px'}} /></div>
       
     </div>
     </div>
