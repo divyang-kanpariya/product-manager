@@ -5,23 +5,25 @@ import Header from './Header';
 import Footer from './Footer';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import { UserContext } from '../App';
+import { UserContext, CartContext } from '../App';
 import { Container } from 'react-bootstrap';
 import { shadows } from '@mui/system';
 import DeleteButton from './DeleteButton';
+import CartButton from './CartButton';
+import BackButton from './BackButton';
+
 const ShowProduct = () => {
   const navigate = useNavigate()
+
 
   const [searchParams, setSearchParams] = useSearchParams();
   let currentProductId = searchParams.get('sourceid');
 
   const { products, setProducts } = useContext(UserContext);
-  const backButton = {
-    position: 'fixed',
-    top: '120px',
-    left: '100px',
-    backgroundColor: 'black',
-  }
+  const { cartProducts, setCartProducts } = useContext(CartContext);
+  console.log('cartproducts', cartProducts)
+
+
   function backToApp() {
     navigate('/')
   }
@@ -44,18 +46,26 @@ const ShowProduct = () => {
         return x.id !== currentProductId;
       })
     })
+    setCartProducts((cartProducts) => {
+      return cartProducts.filter((x, id) => {
+        return x.id !== currentProductId;
+      })
+    })
     console.log(products)
     navigate('/')
+  }
+
+  function addToCart() {
+    setCartProducts([...cartProducts, currentProduct])
+    console.log('After cartproducts', cartProducts)
   }
 
   return (
     <div>
       <Header />
-      <Fab onClick={backToApp} sx={backButton} color="primary">
-        <ArrowBackIcon />
-      </Fab>
+      <BackButton onBack={backToApp} />
       <div className='d-flex justify-content-center p-5 '>
-        <div><img style={{ paddingRight: '100px', width: '600px' }} src="https://modernpaintbynumbers.com/wp-content/uploads/2021/09/Still-Life-with-Candlestick-by-leger-paint-by-number.jpg" alt="" />
+        <div><img style={{ paddingRight: '100px', width: '600px' }} src={URL.createObjectURL(currentProduct.file)} alt="" />
         </div>
         <div style={{ maxWidth: '700px' }}>
           <p style={{ fontSize: '45px', fontWeight: '600', padding: '0 0 0 0' }}>{currentProduct.name}</p>
@@ -71,6 +81,7 @@ const ShowProduct = () => {
 
         </div>
       </div>
+      <CartButton onAdd={addToCart} />
       <DeleteButton onDelete={deleteProduct} />
       <Footer /></div>
   )

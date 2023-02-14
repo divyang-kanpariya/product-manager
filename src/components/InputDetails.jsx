@@ -22,7 +22,7 @@ const InputDetails = () => {
   const unique_id = uuid();
 
   const [category, setCategory] = useState("");
-  const [product, setProduct] = useState({ id: unique_id, name: "", category: "", file: "", description: "", price: "", color: "" });
+  const [product, setProduct] = useState({ id: unique_id, name: "", category: "", file: {}, description: "", price: "", color: "" });
   const [image, setImage] = useState()
   const navigate = useNavigate();
 
@@ -30,7 +30,8 @@ const InputDetails = () => {
 
   function addImage(event) {
     if (event.target.files && event.target.files.length > 0) {
-      setImage(event.target.files[0])
+      setProduct({ ...product, file: event.target.files[0] })
+
     }
   }
 
@@ -53,32 +54,21 @@ const InputDetails = () => {
   }
 
   function formValidation() {
-    // if(product.name == ""){
-    //  document.getElementById('name').style.border='2px solid red';
-    //  document.getElementById('name').style.zIndex=2;
-    // }
-    product.name == "" ? document.getElementById('name').style.border = '2px solid red' : document.getElementById('name').style.border = 'none';
-    product.category == "" ? document.getElementById('category').style.border = '2px solid red' : document.getElementById('category').style.border = 'none';
-    product.description == "" ? document.getElementById('description').style.border = '2px solid red' : document.getElementById('description').style.border = 'none';
-    product.price == "" ? document.getElementById('price').style.border = '2px solid red' : document.getElementById('price').style.border = 'none';
 
-    if (product.color == "") {
-      document.getElementById('color').style.border = '2px solid red';
-    }
-    else {
+    // product.name == "" ? document.getElementById('name').style.border = '2px solid red' : document.getElementById('name').style.border = 'none';
+    // product.category == "" ? document.getElementById('category').style.border = '2px solid red' : document.getElementById('category').style.border = 'none';
+    // product.description == "" ? document.getElementById('image').style.border = '2px solid red' : document.getElementById('image').style.border = 'none';
+    // product.description == "" ? document.getElementById('description').style.border = '2px solid red' : document.getElementById('description').style.border = 'none';
+    // product.price == "" ? document.getElementById('price').style.border = '2px solid red' : document.getElementById('price').style.border = 'none';
+    // if (product.color == "") {
+    //   document.getElementById('color').style.border = '2px solid red';
+    // }
+    // else {
       setProducts([...products, product])
       navigate("/")
-    }
+    // }
 
   }
-
-  // function addProduct(event) {
-  //   event.preventDefault()
-  //   setProducts([...products, product])
-
-  //   navigate("/")
-
-  // }
 
 
   function eventHandeler(event) {
@@ -127,17 +117,12 @@ const InputDetails = () => {
           </tr>
           <tr className='text-start'>
             <td className='fs-5 px-3'>Images</td>
-            <td><input style={{ padding: '20px 0px 0px 0px' }} type="file" onChange={addImage} name='file' /></td></tr><tr><td> </td>
-            <td>
-              {image && (<div><img style={{ width: '500px' }} src={URL.createObjectURL(image)}></img><td><button style={{ width: '500px', backgroundColor: 'red' ,padding:'0px', color:'white', border:'5px solid red' }} onClick={removeImage} >
-              Remove This Image
-            </button></td></div>)}
+            <td><input id='image' style={{ padding: '20px 0px 20px 0px' }} type="file" onChange={addImage} name='file' /></td></tr><tr><td> </td>
 
-            </td>
           </tr>
           <tr className='text-start'>
             <td className='fs-5 px-3 '>description</td>
-            <td><TextField id='description' required name='description' onChange={eventHandeler} multiline={true} minRows={3} sx={form} placeholder='Enter More Information about your product....' />
+            <td id='description'><TextField required name='description' onChange={eventHandeler} multiline={true} minRows={3} sx={form} style={{ marginTop: '0' }} />
             </td>
           </tr>
           <tr className='text-start'>
