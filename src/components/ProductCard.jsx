@@ -17,7 +17,7 @@ function ProductCard(props) {
   }
   const [state, setstate] = useState();
 
-
+  
   function gotoProduct() {
     setstate(data)
     navigate(`/showproduct?sourceid=${data.id}`);
@@ -26,11 +26,11 @@ function ProductCard(props) {
 
   return (
     <Card onClick={gotoProduct} sx={{ width: 290, marginLeft: 10, minHeight: '365px', backgroundColor: '#ebd3d1', boxShadow: "0px 0px 3px", float: 'left', marginBottom: 5 }}>
-      <CardActionArea>
         <CardMedia
           component="img"
           height="194"
-          image={URL.createObjectURL(data.file)}
+         // image={URL.createObjectURL(data.file)}
+         image='https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg'
           alt="Paella dish"
         />
         <CardContent>
@@ -39,7 +39,6 @@ function ProductCard(props) {
           <Typography>{data.color}</Typography>
           <Typography className='fs-2 text-danger'>$ {data.price}</Typography>
         </CardContent>
-      </CardActionArea>
     </Card>
 
   )

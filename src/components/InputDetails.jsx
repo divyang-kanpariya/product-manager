@@ -14,6 +14,7 @@ import { type } from '@testing-library/user-event/dist/type';
 import { useNavigate } from 'react-router-dom';
 import { v4 as uuid } from 'uuid';
 
+
 const InputDetails = () => {
 
   const { products, setProducts } = useContext(UserContext);
@@ -22,11 +23,12 @@ const InputDetails = () => {
   const unique_id = uuid();
 
   const [category, setCategory] = useState("");
-  const [product, setProduct] = useState({ id: unique_id, name: "", category: "", file: {}, description: "", price: "", color: "" });
+  const [product, setProduct] = useState({ id: unique_id, name: "", category: "", file: {}, description: "", price: "", color: "", counter:1 });
   const [image, setImage] = useState()
   const navigate = useNavigate();
 
   console.log('image', image)
+  
 
   function addImage(event) {
     if (event.target.files && event.target.files.length > 0) {
@@ -117,7 +119,7 @@ const InputDetails = () => {
           </tr>
           <tr className='text-start'>
             <td className='fs-5 px-3'>Images</td>
-            <td><input id='image' style={{ padding: '20px 0px 20px 0px' }} type="file" onChange={addImage} name='file' /></td></tr><tr><td> </td>
+            <td><input id='image' style={{ padding: '20px 0px 20px 0px' }} type="file"  onChange={addImage} name='file' /></td></tr><tr><td> </td>
 
           </tr>
           <tr className='text-start'>

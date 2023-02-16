@@ -3,18 +3,19 @@ import React, { useState, createContext, Children } from "react";
 const UserContext = createContext([]);
 const CartContext = createContext([]);
 
-function MyContext(children){
+function MyContext(children) {
 
     const [products, setProducts] = useState([]);
     const [cartProducts, setCartProdcts] = useState([])
 
-    return(
-        <UserContext.Provider value={{products, setProducts}}>
-            <CartContext.Provider value={{cartProducts, setCartProdcts}}>
+    return (
+        <UserContext.Provider value={{ products, setProducts }}>
+            <CartContext.Provider value={{ cartProducts, setCartProdcts }}>
                 {children}
-             </CartContext.Provider>
+            </CartContext.Provider>
         </UserContext.Provider>
     )
 }
 
-export {UserContext, CartContext, MyContext}
+export default MyContext
+export { UserContext, CartContext }

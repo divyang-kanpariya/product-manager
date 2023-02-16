@@ -5,23 +5,25 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import InputDetails from "./components/InputDetails";
 import ShowProduct from "./components/ShowProduct";
 import CartPage from "./components/CartPage";
+
 const UserContext = createContext([]);
 const CartContext = createContext([]);
 
 function App() {
 
-  // const [products, setProducts] = useState([{
-  //   id:45,
-  //   name:"This is first product",
-  //   file : {},
-  //   category:"computer",
-  //   description:"description for product 1 description for product 1description for product 1description for product 1description for product 1description for product 1description for product 1description for product 1description for product 1 description for product 1description for product 1description for product 1description for product 1 description for product 1description for product 1description for product 1",
-  //   color:'pink',
-  //   price:'20',
-  // }]);
+  const [products, setProducts] = useState([{
+    id:45,
+    name:"This is first product",
+    file : {},
+    category:"computer",
+    description:"description for product 1 description for product 1description for product 1description for product 1description for product 1description for product 1description for product 1description for product 1description for product 1 description for product 1description for product 1description for product 1description for product 1 description for product 1description for product 1description for product 1",
+    color:'pink',
+    price:'20',
+    counter: 1
+  }]);
 
 
-  const [products, setProducts] = useState([]);
+  //const [products, setProducts] = useState([]);
   console.log(products);
   const [cartProducts, setCartProducts] = useState([])
 

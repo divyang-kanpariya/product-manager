@@ -12,6 +12,7 @@ import DeleteButton from './DeleteButton';
 import CartButton from './CartButton';
 import BackButton from './BackButton';
 
+
 const ShowProduct = () => {
   const navigate = useNavigate()
 
@@ -65,7 +66,7 @@ const ShowProduct = () => {
       <Header />
       <BackButton onBack={backToApp} />
       <div className='d-flex justify-content-center p-5 '>
-        <div><img style={{ paddingRight: '100px', width: '600px' }} src={URL.createObjectURL(currentProduct.file)} alt="" />
+        <div><img style={{ paddingRight: '100px', width: '600px' }} src='https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg'alt="" />
         </div>
         <div style={{ maxWidth: '700px' }}>
           <p style={{ fontSize: '45px', fontWeight: '600', padding: '0 0 0 0' }}>{currentProduct.name}</p>

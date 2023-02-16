@@ -16,7 +16,13 @@ import { CartContext } from "../App";
 function Header() {
   const navigate = useNavigate()
   const { cartProducts } = useContext(CartContext)
-  const noOfItems = cartProducts.length
+
+
+  const uniqueCartProducts = cartProducts.filter((e,id) => {
+    return cartProducts.indexOf(e)==id;
+  })
+  
+  const noOfItems = uniqueCartProducts.length
   return (
     <AppBar position="static" sx={{ marginBottom: "75px", backgroundColor: "black" }}>
       <Container maxWidth="xl">
