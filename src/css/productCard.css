@@ -1,0 +1,13 @@
+.product-card{
+    width: 290px  !important;
+    margin-left: 77px;
+    min-height: 365px;
+    background-color: #ebd3d1 !important;
+    box-shadow: 0 0 3px;
+    float: left;
+    margin-bottom: 40px;
+}
+.price{
+    font-size: 30px !important;
+    color: red;
+}

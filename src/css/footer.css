@@ -1,0 +1,21 @@
+.footer-left{
+    display: flex;
+    margin: 0 20px;
+    padding-top: 20px;
+    justify-content: space-between;
+    color: white;
+}
+
+.footer-right{
+    margin: 0 20px;
+}
+
+.footer-icons{
+    font-size: 35px !important;
+    margin-right: 10px;
+    padding-bottom:5px !important;
+}
+
+.copyright-text{
+    font-size: 18px;
+}

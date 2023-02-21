@@ -1,0 +1,12 @@
+.total-price{
+    position: fixed;
+    font-weight: 400;
+    font-size: 22px;
+    bottom: 90px;
+    right: 200px;
+    color: white;
+    background-color: black;
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px  black;
+}

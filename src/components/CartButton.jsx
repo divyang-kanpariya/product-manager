@@ -1,13 +1,11 @@
 import React from 'react'
 import Fab from '@mui/material/Fab';
-import DeleteIcon from '@mui/icons-material/Delete';
 import { useNavigate } from 'react-router-dom';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 const CartButton = (props) => {
-  const navigate = useNavigate();
 
-  const CartButton = {
+  const cartButton = {
     position: 'fixed',
     bottom: "110px",
     right: "170px",
@@ -17,7 +15,7 @@ const CartButton = (props) => {
   return (
 
     <div>
-      <Fab sx={CartButton} onClick={props.onAdd} color='primary' aria-label="delete" size=''>
+      <Fab sx={cartButton} onClick={props.onAdd} color='primary' aria-label="delete" size=''>
         <ShoppingCartIcon sx={{ color: 'white' }} />
       </Fab>
     </div>

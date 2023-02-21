@@ -4,8 +4,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import { useNavigate } from 'react-router-dom';
 
 const DeleteButton = (props) => {
-  const navigate = useNavigate();
-    const DeleteButton = {
+    const deleteButton = {
         position: 'fixed',
         bottom: "110px",
         right: "90px",
@@ -16,7 +15,7 @@ const DeleteButton = (props) => {
   return (
    
     <div>
-    <Fab sx={DeleteButton} onClick={props.onDelete}  color='primary' aria-label="delete" size=''>
+    <Fab sx={deleteButton} onClick={props.onDelete}  color='primary' aria-label="delete" size=''>
         <DeleteIcon sx={{color:'white'}} />
       </Fab>
       </div>

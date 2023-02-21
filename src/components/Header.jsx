@@ -10,41 +10,36 @@ import AdbIcon from "@mui/icons-material/Adb";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { Navigate, useNavigate } from "react-router-dom";
 import { CartContext } from "../App";
-
-
+import "../css/header.css";
 
 function Header() {
-  const navigate = useNavigate()
-  const { cartProducts } = useContext(CartContext)
+  const navigate = useNavigate();
+  const { cartProducts } = useContext(CartContext);
 
+  const uniqueCartProducts = cartProducts.filter((e, id) => {
+    return cartProducts.indexOf(e) === id;
+  });
 
-  const uniqueCartProducts = cartProducts.filter((e,id) => {
-    return cartProducts.indexOf(e)==id;
-  })
-  
-  const noOfItems = uniqueCartProducts.length
+  const noOfItems = uniqueCartProducts.length;
   return (
-    <AppBar position="static" sx={{ marginBottom: "75px", backgroundColor: "black" }}>
+    <AppBar className="app-bar" position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <AdbIcon sx={{ mr: 1 }} />
-          <Typography
-            href="/"
-            sx={{
-              fontSize: '22px',
-              marginRight: 2,
-              fontFamily: "monospace",
-              fontWeight: 700,
-              letterSpacing: ".3rem",
-              color: "inherit",
-              textDecoration: "none"
-            }}
-          >
+          <Typography className="logo-text" href="/">
             LOGO
           </Typography>
 
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}></Box>
-          <Button sx={{ color: 'white', marginRight: '40px' }} onClick={() => { return navigate('/cartpage') }} >
+          <Box
+            className="header-box"
+            sx={{ display: { xs: "none", md: "flex" } }}
+          ></Box>
+          <Button
+            className="open-cart"
+            onClick={() => {
+              return navigate("/cartpage");
+            }}
+          >
             <ShoppingCartIcon />
             {noOfItems}
           </Button>

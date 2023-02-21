@@ -12,13 +12,13 @@ const AddButton = () => {
         backgroundColor:'black'
     }
 
-    function addProduct(){
+    function AddProduct(){
       navigate("/inputdetails");
     }
   return (
    
     <div>
-    <Fab sx={addButton} onClick={addProduct} color="primary" aria-label="add" size=''>
+    <Fab sx={addButton} onClick={AddProduct} color="primary" aria-label="add" size=''>
         <AddIcon sx={{color:'white'}} />
       </Fab>
       </div>

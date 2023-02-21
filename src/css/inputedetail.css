@@ -1,0 +1,41 @@
+.inputdetail-form-box{
+    min-width: 75px;
+}
+
+.form-container{
+    justify-content: center;
+    align-items: left;
+    text-align: start;
+}
+.title-box{
+    margin-bottom: 50px;
+    font-size: 32px;
+}
+
+.input-field-name{
+    font-size: 22px;
+    margin: auto 0 !important;
+    width: 150px;
+}
+
+.form{
+    font-weight: 500;
+    justify-content: center;
+    text-align: center;
+    margin: auto;
+}
+
+.form-field{
+    margin: auto 0 10px 20px !important;
+}
+
+.addproduct-button{
+    margin-top: 40px !important;
+    margin-bottom: 100px;
+    background-color: black  !important;
+    border:none;
+    color:aliceblue;
+    height: 45px;
+    width: 135px;
+    border-radius: 10px;
+}

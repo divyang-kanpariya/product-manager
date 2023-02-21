@@ -1,0 +1,45 @@
+.cartitem-card {
+    width: 290;
+    margin-left: 77px;
+    min-height: 365px;
+    background-color: #ebd3d1 !important;
+    box-shadow: 0px 0px 3px;
+    float: left;
+    margin-bottom: 5;
+}
+
+.minus-button {
+    background-color: red !important;
+    position: relative !important;
+    margin-bottom: 10px !important;
+    margin-right: 3px !important;
+}
+
+.plus-button {
+    background-color: green !important;
+    position: relative !important;
+    margin-bottom: 10px !important;
+    margin-right: 3px !important;
+}
+
+.delete-button{
+    background-color: black !important;
+    position: relative !important;
+    float: right !important;
+    margin-bottom: 10px !important;
+    margin-right: 3px !important;
+}
+
+.counter{
+    font-size: 30px;
+    margin: 0px 20px 10px 20px;
+    
+}
+
+.icons{
+    color:white
+}
+.price{
+    font-size: 30px !important;
+    color: red;
+}
